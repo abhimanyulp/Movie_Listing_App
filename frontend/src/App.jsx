@@ -20,7 +20,7 @@ function App() {
 
   const fetch = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/movies/getall")
+      const res = await axios.get("https://the-movie-app.onrender.com/movies/getall")
       console.log(res.data.data)
       setMovies(res.data.data)
     } catch (error) {
@@ -31,7 +31,7 @@ function App() {
   const addMovie = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("http://localhost:8000/movies/post", {
+      await axios.post("https://the-movie-app.onrender.com/movies/post", {
         title,
         year,
         genre,
@@ -51,7 +51,7 @@ function App() {
 
   const deleteMovie = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/movies/delete/${id}`)
+      await axios.delete(`https://the-movie-app.onrender.com/movies/delete/${id}`)
       fetch()
     } catch (error) {
       console.log(error)
